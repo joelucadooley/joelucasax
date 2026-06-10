@@ -5,6 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joe Luca — Saxophone &amp; Sitar</title>
   <meta name="description" content="Joe Luca — Saxophonist and sitarist based between the UK and Spain. Jazz and Indian Classical music.">
+  <meta name="theme-color" content="#060810">
+
+  <!-- Social sharing preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.joelucasax.com/">
+  <meta property="og:title" content="Joe Luca — Saxophone &amp; Sitar">
+  <meta property="og:description" content="Saxophonist and sitarist bridging Jazz and Indian Classical music. Based between Barcelona and the UK.">
+  <meta property="og:image" content="https://www.joelucasax.com/hero-playing.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Joe Luca — Saxophone &amp; Sitar">
+  <meta name="twitter:description" content="Saxophonist and sitarist bridging Jazz and Indian Classical music. Based between Barcelona and the UK.">
+  <meta name="twitter:image" content="https://www.joelucasax.com/hero-playing.jpg">
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joe Luca",
+    "url": "https://www.joelucasax.com",
+    "image": "https://www.joelucasax.com/hero-playing.jpg",
+    "jobTitle": "Saxophonist, Sitarist & Composer",
+    "description": "UK-born musician and composer specialising in Jazz and Indian Classical music on saxophone and sitar, based between Barcelona and the United Kingdom.",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Leeds Conservatoire" },
+      { "@type": "CollegeOrUniversity", "name": "Universitat Rovira i Virgili" }
+    ],
+    "knowsAbout": ["Jazz", "Indian Classical Music", "Saxophone", "Sitar", "Composition"],
+    "sameAs": [
+      "https://www.instagram.com/joelucasax",
+      "https://www.facebook.com/joelucasax",
+      "https://www.linkedin.com/company/joelucasax",
+      "https://www.twitter.com/JoeLucaSax"
+    ]
+  }
+  </script>
+
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -20,6 +57,11 @@
       --sans: 'Jost', system-ui, sans-serif;
     }
     html { scroll-behavior: smooth; }
+    ::selection { background: rgba(201,169,110,0.35); color: var(--cream); }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: #2a2d40; border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
     body { background: var(--bg); color: var(--cream); font-family: var(--sans); font-weight: 300; overflow-x: hidden; }
 
     /* NAV */
@@ -305,7 +347,7 @@
           </div>
         </div>
         <div class="about-photos reveal reveal-delay-2">
-          <img src="about-outdoor.jpg" alt="Joe Luca with saxophone" class="about-photo-main">
+          <img loading="lazy" src="about-outdoor.jpg" alt="Joe Luca with saxophone" class="about-photo-main">
         </div>
       </div>
     </div>
@@ -322,7 +364,7 @@
     </div>
     <div class="music-layout">
       <div class="music-image-panel reveal">
-        <img src="music-sax-mic.jpg" alt="Saxophone at the microphone in the studio">
+        <img loading="lazy" src="music-sax-mic.jpg" alt="Saxophone at the microphone in the studio">
         <div class="music-image-overlay"></div>
       </div>
       <div class="releases-list reveal reveal-delay-2">
@@ -419,7 +461,7 @@
       </div>
 
       <div class="comp-break reveal">
-        <img src="comp-bigband.jpg" alt="Joe Luca performing with big band ensemble">
+        <img loading="lazy" src="comp-bigband.jpg" alt="Joe Luca performing with big band ensemble">
       </div>
 
       <div class="bigband-header reveal">
@@ -468,18 +510,18 @@
     </div>
     <div class="live-photo-strip reveal">
       <div class="strip-photo">
-        <img src="live-concert.jpg" alt="Large Indian classical ensemble with purple stage lighting">
+        <img loading="lazy" src="live-concert.jpg" alt="Large Indian classical ensemble with purple stage lighting">
       </div>
       <div class="strip-photo">
-        <img src="live-indian.jpg" alt="Joe Luca performing with Indian classical musicians" style="object-position: center 40%;">
+        <img loading="lazy" src="live-indian.jpg" alt="Joe Luca performing with Indian classical musicians" style="object-position: center 40%;">
       </div>
     </div>
     <div class="live-photo-strip reveal" style="margin-top:2px;">
       <div class="strip-photo">
-        <img src="live-trio-bw.jpg" alt="Joe Luca jazz trio in black and white">
+        <img loading="lazy" src="live-trio-bw.jpg" alt="Joe Luca jazz trio in black and white">
       </div>
       <div class="strip-photo">
-        <img src="live-ensemble.jpg" alt="Joe Luca performing with jazz ensemble">
+        <img loading="lazy" src="live-ensemble.jpg" alt="Joe Luca performing with jazz ensemble">
       </div>
     </div>
     <div class="container">
