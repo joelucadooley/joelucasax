@@ -73,10 +73,10 @@
     .nav-links a:hover { color: var(--gold); }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 1px; background: var(--cream); }
-    .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(6,8,16,0.97); z-index: 99; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem; }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(6,8,16,0.97); z-index: 200; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem; }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-family: var(--serif); font-size: 2.2rem; font-style: italic; color: var(--cream); text-decoration: none; }
-    .mobile-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--muted); font-size: 1.5rem; cursor: pointer; }
+    .mobile-close { position: absolute; top: calc(1rem + env(safe-area-inset-top)); right: 1rem; background: none; border: none; color: var(--cream); font-size: 1.6rem; line-height: 1; cursor: pointer; z-index: 201; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; }
 
     /* HERO */
     #hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -650,6 +650,13 @@
     });
     document.getElementById('mobileClose').addEventListener('click', function() {
       document.getElementById('mobileMenu').classList.remove('open');
+    });
+    // Fallbacks: tap the background or press Escape to close
+    document.getElementById('mobileMenu').addEventListener('click', function(ev) {
+      if (ev.target === this) { this.classList.remove('open'); }
+    });
+    document.addEventListener('keydown', function(ev) {
+      if (ev.key === 'Escape') { document.getElementById('mobileMenu').classList.remove('open'); }
     });
     document.querySelectorAll('.mobile-nav-link').forEach(function(l) {
       l.addEventListener('click', function() { document.getElementById('mobileMenu').classList.remove('open'); });
