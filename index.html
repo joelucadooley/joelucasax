@@ -75,6 +75,7 @@
     .hamburger span { display: block; width: 22px; height: 1px; background: var(--cream); }
     .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(6,8,16,0.97); z-index: 200; flex-direction: column; justify-content: center; align-items: center; gap: 2.5rem; }
     .mobile-menu.open { display: flex; }
+    body.menu-open { overflow: hidden; }
     .mobile-menu a { font-family: var(--serif); font-size: 2.2rem; font-style: italic; color: var(--cream); text-decoration: none; }
     .mobile-close { position: absolute; top: calc(1rem + env(safe-area-inset-top)); right: 1rem; background: none; border: none; color: var(--cream); font-size: 1.6rem; line-height: 1; cursor: pointer; z-index: 201; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; }
 
@@ -201,7 +202,7 @@
     /* CONTACT */
     #contact { background: var(--bg2); }
     .contact-inner { max-width: 620px; }
-    .contact-text p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; margin-top: 1.5rem; }
+    .contact-inner p:not([class]) { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; margin-top: 1.5rem; }
     .contact-email { font-family: var(--serif); font-size: 1.5rem; font-style: italic; color: var(--gold-light); text-decoration: none; display: block; margin-bottom: 2.5rem; transition: color 0.2s; }
     .contact-email:hover { color: var(--cream); }
     .social-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
@@ -289,7 +290,7 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
     <a href="#about" class="mobile-nav-link">About</a>
     <a href="#music" class="mobile-nav-link">Music</a>
     <a href="#compositions" class="mobile-nav-link">Compositions</a>
@@ -645,21 +646,27 @@
     });
 
     // Mobile menu
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }
+
     document.getElementById('hamburger').addEventListener('click', function() {
       document.getElementById('mobileMenu').classList.add('open');
+      document.body.classList.add('menu-open');
     });
     document.getElementById('mobileClose').addEventListener('click', function() {
-      document.getElementById('mobileMenu').classList.remove('open');
+      closeMenu();
     });
     // Fallbacks: tap the background or press Escape to close
     document.getElementById('mobileMenu').addEventListener('click', function(ev) {
-      if (ev.target === this) { this.classList.remove('open'); }
+      if (ev.target === this) { closeMenu(); }
     });
     document.addEventListener('keydown', function(ev) {
-      if (ev.key === 'Escape') { document.getElementById('mobileMenu').classList.remove('open'); }
+      if (ev.key === 'Escape') { closeMenu(); }
     });
     document.querySelectorAll('.mobile-nav-link').forEach(function(l) {
-      l.addEventListener('click', function() { document.getElementById('mobileMenu').classList.remove('open'); });
+      l.addEventListener('click', function() { closeMenu(); });
     });
 
     // Hero Ken Burns
