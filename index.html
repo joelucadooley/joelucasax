@@ -221,6 +221,25 @@
     @media (max-width: 900px) { .ack-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 500px) { .ack-grid { grid-template-columns: 1fr; } }
 
+    /* DUENDE */
+    #duende { background: var(--bg3); padding: 5rem 0; border-top: 0.5px solid rgba(201,169,110,0.1); border-bottom: 0.5px solid rgba(201,169,110,0.1); }
+    .duende-card { display: grid; grid-template-columns: 96px 1fr; gap: 2.5rem; align-items: center; max-width: 820px; }
+    .duende-icon { width: 96px; height: 96px; border-radius: 22px; display: block; }
+    .duende-title { font-family: var(--serif); font-size: 2.2rem; font-weight: 300; color: var(--cream); line-height: 1.1; }
+    .duende-tagline { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--gold-light); margin-top: 0.35rem; }
+    .duende-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-top: 1rem; max-width: 560px; }
+    .duende-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+    .duende-btn { display: inline-block; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding: 0.75rem 1.25rem; border: 0.5px solid rgba(201,169,110,0.3); color: var(--cream); transition: all 0.25s; }
+    .duende-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .duende-btn.primary { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+    .duende-btn.primary:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--bg); }
+    @media (max-width: 600px) {
+      .duende-card { grid-template-columns: 1fr; gap: 1.5rem; }
+      .duende-icon { width: 72px; height: 72px; border-radius: 16px; }
+      .duende-buttons { flex-direction: column; }
+      .duende-btn { text-align: center; }
+    }
+
     /* FOOTER */
     footer { padding: 3rem; border-top: 0.5px solid rgba(201,169,110,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .footer-name { font-family: var(--serif); font-size: 1.1rem; font-style: italic; color: var(--gold-dark); }
@@ -596,6 +615,25 @@
         <span class="ack-name">Keranjeet Kaur Virdee</span>
         <span class="ack-name">Colin Watson</span>
         <span class="ack-name">Jean Watson</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DUENDE -->
+  <section id="duende">
+    <div class="container">
+      <p class="section-label reveal">Also by Joe</p>
+      <div class="duende-card reveal reveal-delay-1">
+        <img loading="lazy" src="duende-icon.svg" alt="Duende app icon" class="duende-icon" width="96" height="96">
+        <div>
+          <h2 class="duende-title">Duende</h2>
+          <p class="duende-tagline">Music practice, logged as training.</p>
+          <p class="duende-desc">A free iPhone app that times every practice session, tags what you worked on, and posts the hours to Strava alongside your runs and rides.</p>
+          <div class="duende-buttons">
+            <a href="https://apps.apple.com/app/id6802828836" target="_blank" rel="noopener" class="duende-btn primary">Download on the App Store</a>
+            <a href="https://getduende.app" target="_blank" rel="noopener" class="duende-btn">getduende.app</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
